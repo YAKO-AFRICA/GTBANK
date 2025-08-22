@@ -74,87 +74,154 @@
             <div class="col" style="width: 50%; float: right; text-align: right; margin-right: 0px">Bulletin N° : {{ $contrat->numBullettin ?? '' }}</div>
         </div>
 
-        <section style="margin-top: 20px; padding-bottom: 20px; border: 1px solid #ccc; ">
-            <div class="container-fluid" style="margin-left: -10px; ">
-                <div class="aderent" style="border: 1px solid #ccc; background-color: #747171; height: 18px; margin-left: 10px">
-                    <h4 style="color: #fff; font-size: 13px; ">ADHERENT :</h4>
-                </div>
-    
-                <div class="content1" style="margin-top: 10px; padding: 5px; margin-left: 10px">
 
-                    <div class="identite" style="width: 100%">
-                        <div class="civilite" style="float: left; width: 49%">
-                            <label for="civilite"><strong>Genre :</strong> {{ $contrat->adherent->civilite ?? '' }}</label>
-                        </div>
-    
-                        <div class="telephone" style="float: right; width: 49%">
-                            <div class="telephone">
-                                <label for="telephone"><strong>Situation Matrimoniale :</strong> 
-                                    <span>
-                                        <span>Céliba <span class="chechbox">aa</span></span>
-                                        <span>Marié (e) <span class="chechbox">aa</span></span>
-                                        <span>Veuve <span class="chechbox">aa</span></span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
+        <fieldset class="" style="border: 1px solid #ccc; padding: 1rem; margin-top: 30px">
+            <legend class="float-none w-auto px-2" style="float: none; width: auto; font-size: 0.875rem; border: 1px solid #ccc; padding: 5px">
+                <small style="">INFORMATIONS SUR l'ADHERENT / ASSURE :</small>
+            </legend>
+
+            <div class="content1" style="margin-top: 10px; padding-bottom: 10px">
+
+                <div class="identite" style="width: 100%">
+                    <div class="civilite" style="float: left; width: 49%">
+                        <label for="civilite"><strong>Genre :</strong> {{ $contrat->adherent->civilite ?? '' }}</label>
                     </div>
 
-                    <div class="identite" style="width: 100%; margin-top: 25px">
-                        <div class="nom" style="float: left; width: 49%">
-                            <label for="nom"><strong>Nom :</strong> {{{ $contrat->adherent->nom ?? ''}}}</label>
-                        </div>
-    
-                        <div class="prenom" style="float: right; width: 49%;">
-                            <label for="prenom"><strong>Prenom :</strong> {{ $contrat->adherent->prenom ?? '' }}</label>
-                        </div>
-                    </div>
-                    
-
-                    <div class="identite" style="margin-top: 25px;">
-    
-                        <div class="bithday" style="float: left; width: 49%;">
-                            <label for="bithday"><strong>Date de naissance :</strong>{{{ $contrat->adherent->datenaissance ?? ''}}}</label>
-                        </div>
-
-                        <div class="lieunaissance" style="float: right; width: 49%;">
-                            <label for="lieunaissance"><strong>lieu de naissance :</strong> {{ $contrat->adherent->lieunaissance ?? '' }}</label>
-                        </div>
-    
-                    </div>
-                    <div class="identite" style="margin-top: 25px">
-                        <div class="domicile" style="float: left ;width: 49%">
-                            <label for="domicile"><strong>Domicile :</strong> {{ $contrat->adherent->lieuresidence ?? '' }}</label>
-                        </div>
-                        <div class="postal" style="float: right; width: 49%">
-                            <div class="postal">
-                                <label for="postal"><strong>Boite Postale :</strong> ------------</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="identite" style="margin-top: 25px">
-                        <div class="profession" style="float: left ;width: 49%">
-                            <label for="profession"><strong>Profession :</strong> {{ $contrat->adherent->profession ?? '' }}</label>
-                        </div>
-                        <div class="employeur" style="float: right; width: 49%">
-                            <div class="employeur">
-                                <label for="employeur"><strong>Employeur :</strong> <span>{{ $contrat->adherent->employeur ?? '' }}</span></label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="identite" style="margin-top: 25px">
-                        <div class="numeropiece" style="float: left ;width: 49%">
-                            <label for="numeropiece"><strong>CNI/Passport/Attestation d'identité :</strong> {{ $contrat->adherent->numeropiece ?? '' }}</label>
-                        </div>
-                        <div class="telephone" style="float: right; width: 49%">
-                            <div class="telephone">
-                                <label for="telephone"><strong>Téléphone / Cell :</strong> <span>{{ $contrat->adherent->telephone ?: $contrat->adherent->mobile }}</span></label>
-                            </div>
+                    <div class="telephone" style="float: right; width: 49%">
+                        <div class="telephone">
+                            <label for="telephone"><strong>Situation Matrimoniale :</strong> 
+                                <span>
+                                    <span>Céliba <span class="chechbox">aa</span></span>
+                                    <span>Marié (e) <span class="chechbox">aa</span></span>
+                                    <span>Veuve <span class="chechbox">aa</span></span>
+                                </span>
+                            </label>
                         </div>
                     </div>
                 </div>
-    
+
+                <div class="identite" style="width: 100%; margin-top: 20px">
+                    <div class="nom" style="float: left; width: 49%">
+                        <label for="nom"><strong>Nom :</strong> {{{ $contrat->adherent->nom ?? ''}}}</label>
+                    </div>
+
+                    <div class="prenom" style="float: right; width: 49%;">
+                        <label for="prenom"><strong>Prenom :</strong> {{ $contrat->adherent->prenom ?? '' }}</label>
+                    </div>
+                </div>
+                
+
+                <div class="identite" style="margin-top: 20px;">
+
+                    <div class="bithday" style="float: left; width: 49%;">
+                        <label for="bithday"><strong>Date de naissance :</strong>{{{ $contrat->adherent->datenaissance ?? ''}}}</label>
+                    </div>
+
+                    <div class="lieunaissance" style="float: right; width: 49%;">
+                        <label for="lieunaissance"><strong>lieu de naissance :</strong> {{ $contrat->adherent->lieunaissance ?? '' }}</label>
+                    </div>
+
+                </div>
+                <div class="identite" style="margin-top: 20px">
+                    <div class="domicile" style="float: left ;width: 49%">
+                        <label for="domicile"><strong>Domicile :</strong> {{ $contrat->adherent->lieuresidence ?? '' }}</label>
+                    </div>
+                    <div class="postal" style="float: right; width: 49%">
+                        <div class="postal">
+                            <label for="postal"><strong>Boite Postale :</strong> ------------</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="identite" style="margin-top: 20px">
+                    <div class="profession" style="float: left ;width: 49%">
+                        <label for="profession"><strong>Profession :</strong> {{ $contrat->adherent->profession ?? '' }}</label>
+                    </div>
+                    <div class="employeur" style="float: right; width: 49%">
+                        <div class="employeur">
+                            <label for="employeur"><strong>Employeur :</strong> <span>{{ $contrat->adherent->employeur ?? '' }}</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="identite" style="margin-top: 20px">
+                    <div class="numeropiece" style="float: left ;width: 49%">
+                        <label for="numeropiece"><strong>CNI/Passport/Attestation d'identité :</strong> {{ $contrat->adherent->numeropiece ?? '' }}</label>
+                    </div>
+                    <div class="telephone" style="float: right; width: 49%">
+                        <div class="telephone">
+                            <label for="telephone"><strong>Téléphone / Cell :</strong> <span>{{ $contrat->adherent->telephone ?: $contrat->adherent->mobile }}</span></label>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </fieldset>
+
+        <section>
+            <fieldset class="" style="border: 1px solid #ccc; padding: 1rem; margin-top: 30px">
+                <legend class="float-none w-auto px-2" style="float: none; width: auto; font-size: 0.875rem; border: 1px solid #ccc; padding: 5px">
+                    <small style="">INFORMATIONS SUR LES BENEFICIAIRES</small>
+                </legend>
+                <div class="table-wrap">
+                    <style>
+                        .table-wrap {
+                        margin: 16px 0;
+                        padding: 12px;
+                        border: 1px solid #ccc;
+                        background: #fafafa;
+                        }
+                        .table-title {
+                        margin: 0 0 10px 0;
+                        font: bold 16px/1.3 Arial, Helvetica, sans-serif; /* police CSS2 */
+                        color: #333;
+                        }
+                        .table-basic {
+                        width: 100%;
+                        border-collapse: collapse; 
+                        table-layout: fixed; 
+                        }
+                        .table-basic th,
+                        .table-basic td {
+                        border: 1px solid #ddd;
+                        padding: 8px;
+                        vertical-align: top;       /* CSS2 */
+                        word-wrap: break-word;     /* CSS2.1 */
+                        font: normal 13px/1.4 Arial, Helvetica, sans-serif;
+                        color: #222;
+                        background: #fff;
+                        }
+                        .table-basic th {
+                        background: #f0f0f0;
+                        text-align: left;          /* CSS2 */
+                        }
+                        /* Alternance manuelle via classes (pas de :nth-child) */
+                        .row-alt td { background: #f9f9f9; }
+                    </style>
+
+                    <table class="table-basic" cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Nom Complet</th>
+                                <th>Date de naissance</th>
+                                <th>Lieu de residence</th>
+                                <th>N° Piece d'identité</th>
+                                <th>N° Téléphone</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($contrat->beneficiaires as $beneficiaire)
+                                
+                                <tr>
+                                    <td>{{ $beneficiaire->nom ?? '' }} {{ $beneficiaire->prenom ?? '' }}</td>
+                                    <td>{{ Carbon\Carbon::parse($beneficiaire->datenaissance)->format('d/m/Y') ?? '' }}</td>
+                                    <td>{{ $beneficiaire->lieuresidence ?? '' }}</td>
+                                    <td>{{ $beneficiaire->numeropiece ?? '' }}</td>
+                                    <td>{{ $beneficiaire->telephone ?: $beneficiaire->mobile ?? '' }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+
         </section>
 
 
@@ -184,8 +251,8 @@
                     {{ number_format($contrat->prime, 2, ',', ' ') }} <span>F CFA</span> <span>({{ nombreEnLettre($contrat->prime) }} Franc cfa) </span>
                 </div>
                 <div style="margin-top: 15px">
-                    Cette prime sera prélévée mensuellement sur le compte d'épargne du client à raison de  
-                    <span class="underline">{{ number_format($contrat->prime, 2, ',', ' ') }}FCFA par mois</span>
+                    Cette prime sera prélévée annuellement sur le compte d'épargne du client à raison de  
+                    <span class="underline">{{ number_format($contrat->prime, 2, ',', ' ') }}FCFA par années</span>
                 </div>
             </div>
 
@@ -230,7 +297,7 @@
         <section>
             <div class="fait" style="width: 100%; margin-top: 10px">
 
-                <label for="fait">Fait à : ......................................................................le...........................................................................</label>
+                <label for="fait">Fait à : {{ $contrat->agence ?? '...........'}} le {{ now()->format('d/m/Y')}}</label>
 
             </div>
         </section>

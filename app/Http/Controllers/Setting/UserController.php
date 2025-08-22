@@ -26,8 +26,8 @@ class UserController extends Controller
     public function index()
     {
 
-        $membres = Membre::orderby('idmembre', 'desc')->where('typ_membre','!=','3')->where('codepartenaire','CORIS')->get();
-        $reseaux = Reseau::where('codepartenaire','CORIS')->get();
+        $membres = Membre::orderby('idmembre', 'desc')->where('typ_membre','!=','3')->where('codepartenaire','GTBANK')->get();
+        $reseaux = Reseau::where('codepartenaire','GTBANK')->get();
 
         $reseauId = $reseaux->pluck('id');
 
@@ -38,7 +38,7 @@ class UserController extends Controller
        
         $equipes = Equipe::whereIn('codezone', $zoneId)->get();
         // \dd($equipes);
-        $partners = Partner::where('code','CORIS')->get();
+        $partners = Partner::where('code','GTBANK')->get();
         
         return view('settings.users.index', compact('membres', 'reseaux', 'zones', 'equipes', 'partners'));
     }

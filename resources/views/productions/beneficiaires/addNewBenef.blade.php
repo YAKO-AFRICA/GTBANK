@@ -47,7 +47,7 @@
                         <div class="col-12 col-lg-6">
                             <label for="lienParente" class="form-label">Lien de Parenté</label>
                             <select name="lienParente" class="form-select">
-                                <option>Sélectionner le lien de Parenté</option>
+                                <option class="text-muted" disabled selected>Sélectionner le lien de Parenté</option>
                                 <option value="Conjoint">Conjoint</option>
                                 <option value="Enfant">Enfant</option>
                                 <option value="Autre">Autre</option>

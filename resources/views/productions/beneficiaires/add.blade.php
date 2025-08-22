@@ -25,7 +25,7 @@
                         <div class="col-12 col-lg-6">
                             <label for="lieunaissanceBenef" class="form-label">Lieu de naissance</label>
                             <select id="lieunaissanceBenef" class="form-select">
-                                <option>Sélectionner le lieu</option>
+                                <option >Sélectionner le lieu</option>
                                 @foreach($villes as $ville)
                                     <option value="{{ $ville->libelleVillle }}">{{ $ville->libelleVillle }}</option> 
                                 @endforeach 
@@ -36,19 +36,22 @@
                         <div class="col-12 col-lg-6">
                             <label for="lieuresidenceBenef" class="form-label">Lieu de residence</label>
                             <select id="lieuresidenceBenef" class="form-select">
-                                <option>Sélectionner le lieu</option>
+                                <option disabled selected>Sélectionner le lieu</option>
                                 @foreach($villes as $ville)
                                     <option value="{{ $ville->libelleVillle }}">{{ $ville->libelleVillle }}</option> 
                                 @endforeach 
                             </select>
                         </div>
                         <div class="col-12 col-lg-6">
-                            <label for="lienParente" class="form-label">Lien de Parenté</label>
-                            <select id="lienParente" class="form-select">
-                                <option>Sélectionner le lien de Parenté</option>
+                            <label for="lienParenteBenef" class="form-label">Lien de Parenté</label>
+                            <select id="lienParenteBenef" class="form-select">
+
+                                <option disabled selected>Sélectionner le lien de Parenté</option>
+
                                 <option value="Conjoint">Conjoint</option>
                                 <option value="Enfant">Enfant</option>
                                 <option value="Autre">Autre</option>
+
                             </select>
                         </div>
                     </div>
@@ -63,12 +66,12 @@
                             <input type="email" id="emailBenef" class="form-control" placeholder="Email">
                         </div>
                     </div>
-                    <div class="row g-3 mb-3">
+                    {{-- <div class="row g-3 mb-3">
                         <div class="col-12">
                             <label for="partBenef" class="form-label">Part en %</label>
                             <input type="number" id="partBenef" class="form-control" placeholder="Part du bénéficiaire">
                         </div>
-                    </div>
+                    </div> --}}
                     <input type="hidden" id="beneficiariesInput" name="beneficiaires">
                     <div class="modal-footer">
                         <button type="button" class="btn border-btn" data-bs-dismiss="modal">Annuler</button>

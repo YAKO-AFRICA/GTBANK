@@ -6,14 +6,16 @@
     <div class="row g-3">
 
         <div class="col-12 col-lg-6">
-            <label for="" class="form-label">an cas d'invalidité Absolue et Définitif</label>
+            <label for="" class="form-label">En cas d'invalidité Absolue et Définitif</label>
             <div class="card" style="width: 80%">
                 <div class="card-body">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="addBeneficiary" value="adherent" name="addBeneficiary">
+
                         <label class="form-check-label" for="addBeneficiary" >Adherent</label>
+
                     </div>
-                    <div class="form-check">
+                    {{-- <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="Conjoint" id="conjoint1">
                         <label class="form-check-label" for="conjoint1">
                             Le conjoint non divorcé, ni séparé de corps
@@ -30,7 +32,7 @@
                         <label class="form-check-label" for="Autres1">
                             Autres, Préciser
                         </label>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -75,7 +77,7 @@
                             <th scope="col">Filiation</th>
                             <th scope="col">Téléphone</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Taux (%)</th>
+                            {{-- <th scope="col">Taux (%)</th> --}}
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -103,6 +105,8 @@
         </div>
     </div>
 
+    
+
 
 
     <script>
@@ -110,14 +114,24 @@
          // beneficiaire 
          const beneficiaryRowId = "beneficiary-row";
 
-        // Ajoutez un event listener sur le champ "Adherent"
-        document.getElementById('addBeneficiary').addEventListener('change', function () {
-            if (this.checked) {
-                addBeneficiaryRow();
-            } else {
-                removeBeneficiaryRow();
-            }
+         
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const addBeneficiary = document.getElementById('addBeneficiary');
+
+            // Event sur changement du checkbox
+            addBeneficiary.addEventListener('change', function () {
+                if (this.checked) {
+                    addBeneficiaryRow();
+                } else {
+                    removeBeneficiaryRow();
+                }
+            });
         });
+
+
+
+        
 
         function addBeneficiaryRow() {
             // Vérifiez si la ligne existe déjà pour éviter les doublons
@@ -145,7 +159,6 @@
                 <td>Adhérent</td>
                 <td>${telephone}</td>
                 <td>${email}</td>
-                <td>100%</td>
                 <td><a href="#" class="text-danger" onclick="removeBeneficiaryRow()"><i class="fadeIn animated bx bx-x fs-4"></i></a></td>
             `;
         }
@@ -163,54 +176,60 @@
 
         // Function to add a beneficiary from the modal form
         function addBeneficiary() {
-        // Get form values
-        const beneficiary = {
-            nom: document.getElementById('nomBenef').value,
-            prenom: document.getElementById('prenomBenef').value,
-            dateNaissance: document.getElementById('datenaissanceBenef').value,
-            lieuNaissance: document.getElementById('lieunaissanceBenef').value,
-            lieuResidence: document.getElementById('lieuresidenceBenef').value,
-            lienParente: document.getElementById('lienParente').value,
-            telephone: document.getElementById('mobileBenef').value,
-            email: document.getElementById('emailBenef').value,
-            part: document.getElementById('partBenef').value
-        };
+            // Get form values
+            const beneficiary = {
+                nom: document.getElementById('nomBenef').value,
+                prenom: document.getElementById('prenomBenef').value,
+                dateNaissance: document.getElementById('datenaissanceBenef').value,
+                lieuNaissance: document.getElementById('lieunaissanceBenef').value,
+                lieuResidence: document.getElementById('lieuresidenceBenef').value,
+                lienParente: document.getElementById('lienParenteBenef').value,
+                telephone: document.getElementById('mobileBenef').value,
+                email: document.getElementById('emailBenef').value,
+            };
 
-        // Add to beneficiaries array
-        beneficiaries.push(beneficiary);
+            // Check if beneficiary already exists
+            if (beneficiaries.some(b => b.nom === beneficiary.nom && b.prenom === beneficiary.prenom)) {
+                swal.fire("Attention", "Le bénéficiaire existe d\'ja", "warning");
+                return;
+            }
 
-        document.getElementById('beneficiariesInput').value = JSON.stringify(beneficiaries);
+            console.log(beneficiary);
 
-        // Add row to the table
-        const table = document.getElementById('beneficiariesTable').getElementsByTagName('tbody')[0];
-        const newRow = table.insertRow();
-        newRow.innerHTML = `
-            <td>${beneficiary.nom} ${beneficiary.prenom}</td>
-            <td>${beneficiary.dateNaissance}</td>
-            <td>${beneficiary.lieuNaissance}</td>
-            <td>${beneficiary.lieuResidence}</td>
-            <td>${beneficiary.lienParente}</td>
-            <td>${beneficiary.telephone}</td>
-            <td>${beneficiary.email}</td>
-            <td>${beneficiary.part}%</td>
-            <td><a href="#" class="text-danger" onclick="removeBeneficiary(${beneficiaries.length - 1})"><i class="fadeIn animated bx bx-x fs-4"></i></a></td>
-        `;
+            // Add to beneficiaries array
+            beneficiaries.push(beneficiary);
 
-        // Réinitialiser le formulaire modal
-        document.getElementById('beneficiaryForm').reset();
+            document.getElementById('beneficiariesInput').value = JSON.stringify(beneficiaries);
 
-        // Close modal
-        const modal = document.getElementById('addBenefModal');
-        const bootstrapModal = bootstrap.Modal.getInstance(modal);
-        document.getElementById('beneficiaryForm').reset();
-        bootstrapModal.hide();
+            // Add row to the table
+            const table = document.getElementById('beneficiariesTable').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+            newRow.innerHTML = `
+                <td>${beneficiary.nom} ${beneficiary.prenom}</td>
+                <td>${beneficiary.dateNaissance}</td>
+                <td>${beneficiary.lieuNaissance}</td>
+                <td>${beneficiary.lieuResidence}</td>
+                <td>${beneficiary.lienParente}</td>
+                <td>${beneficiary.telephone}</td>
+                <td>${beneficiary.email}</td>
+                <td><a href="#" class="text-danger" onclick="removeBeneficiary(${beneficiaries.length - 1})"><i class="fadeIn animated bx bx-x fs-4"></i></a></td>
+            `;
+
+            // Réinitialiser le formulaire modal
+            document.getElementById('beneficiaryForm').reset();
+
+            // Close modal
+            const modal = document.getElementById('addBenefModal');
+            const bootstrapModal = bootstrap.Modal.getInstance(modal);
+            document.getElementById('beneficiaryForm').reset();
+            bootstrapModal.hide();
         }
 
         // Function to remove a beneficiary from both the array and the table
         function removeBeneficiary(index) {
-        beneficiaries.splice(index, 1);
-        document.getElementById('beneficiariesInput').value = JSON.stringify(beneficiaries);
-        document.getElementById('beneficiariesTable').getElementsByTagName('tbody')[0].deleteRow(index);
+            beneficiaries.splice(index, 1);
+            document.getElementById('beneficiariesInput').value = JSON.stringify(beneficiaries);
+            document.getElementById('beneficiariesTable').getElementsByTagName('tbody')[0].deleteRow(index);
         }
     </script>
 

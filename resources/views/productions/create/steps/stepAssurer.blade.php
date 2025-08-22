@@ -9,55 +9,19 @@
                 <input class="form-check-input" type="radio" name="estAssure" id="Oui" value="Oui" checked>
                 <label class="form-check-label" for="Oui">Oui</label>
             </div>
-            {{-- <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="estAssure" id="Non" value="Non">
-                <label class="form-check-label" for="Non">Non</label>
-            </div> --}}
         </div>
 
 
-        {{-- @if ($CodeProduit != "ASSCPTBNI" && Auth::user()->codepartenaire == "CORIS") --}}
+        {{-- @if (Auth::user()->codepartenaire == "CORIS")
         <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
-            <!-- Button trigger modal -->
             <button type="button" class="btn" data-bs-toggle="modal"
                 data-bs-target="#createPropositionModal"><i class="fadeIn animated bx bx-plus"></i>Ajouter un(e) autre
                 assuré(e)</button>
-            <!-- Modal -->
         </div>
-        {{-- @endif --}}
+        @endif --}}
         
         
     </div>
-{{--     
-    <table class="table mb-0 table-striped table-bordered table-responsive">
-        <thead>
-            <tr>
-                <th scope="col">Assuré(e)</th>
-                <th scope="col">Garanties</th>
-                <th scope="col">Garanties complementaires</th>
-                <th scope="col">Action</th>
-            </tr>
-        </thead>
-        
-        <tbody>
-        </tbody>
-
-        <tfoot>
-            <tr id="conditional-tr">
-                <td id="display-nom-prenom"></td>
-                <td>
-                    <ul>
-                        @foreach ($productGarantie as $item)
-                            <li>{{ $item->MonLibelle }}</li>
-                        @endforeach
-                    </ul>
-                </td>
-                <td>Pas de garantie</td>
-                <td></td>
-            </tr>
-        </tfoot>
-        
-    </table> --}}
 
     <div style="overflow-x: auto;">
         <table class="table mb-0 table-striped table-bordered">
@@ -65,7 +29,7 @@
                 <tr>
                     <th scope="col">Assuré(e)</th>
                     <th scope="col">Garanties</th>
-                    <th scope="col">Garanties complémentaires</th>
+                    {{-- <th scope="col">Garanties complémentaires</th> --}}
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -83,7 +47,7 @@
                             @endforeach
                         </ul>
                     </td>
-                    <td>Pas de garantie</td>
+                    {{-- <td>Pas de garantie</td> --}}
                     <td></td>
                 </tr>
             </tfoot>

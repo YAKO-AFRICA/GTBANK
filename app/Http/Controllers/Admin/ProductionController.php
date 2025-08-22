@@ -144,7 +144,6 @@ class ProductionController extends Controller
 
         $products = Product::whereIn('CodeProduit', $codeProduits)->get();
 
-        // dd($products);
         return view('productions.create.steps.stepProduct', compact('products'));
     }
 

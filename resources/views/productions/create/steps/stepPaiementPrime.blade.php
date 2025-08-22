@@ -40,7 +40,7 @@
                 <div class="card-body">
                     <label for="" class="form-label">Je souhaite payer mes primes par :</label>
                     <div class="mb-3">
-                        <div class="form-check form-check-inline">
+                        {{-- <div class="form-check form-check-inline">
                             <input class="form-check-input" name="modepaiement" type="radio" value="Virement_bancaire" id="Virement_bancaire">
                             <label class="form-check-label" for="Virement_bancaire">
                                 Virement bancaire
@@ -69,7 +69,15 @@
                             <label class="form-check-label" for="Prelevement_source">
                                 Prélèvement à la source
                             </label>
+                        </div> --}}
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="modepaiement" type="radio" value="SOURCE" id="Prelevement_bancaire" checked/>
+                            <label class="form-check-label" for="Prelevement_bancaire">
+                                Prélèvement Bancaire
+                            </label>
                         </div>
+
                     </div>
 
                     <div class="row mb-3" id="mode_bancaire" style="display: none;">
@@ -115,15 +123,15 @@
 
                             <div class="col-3">
                                 <label for="codeguichet" class="form-label">Code Guichet</label>
-                                <input type="text" class="form-control" id="codeguichet" name="codeguichet">
+                                <input type="text" class="form-control" id="codeguichet" name="codeguichet" minlength="5" maxlength="5">
                             </div>
                             <div class="col-6 ">
-                                <label for="Matricule" class="form-label">Mon N° de compte (Matricule)</label>
-                                <input type="text" class="form-control" id="Matricule" name="numerocompte">
+                                <label for="Matricule" class="form-label">N° de compte</label>
+                                <input type="text" class="form-control" id="Matricule" name="numerocompte" minlength="12" maxlength="12">
                             </div>
                             <div class="col-2 ">
-                                <label for="rib" class="form-label">Rib</label>
-                                <input type="text" class="form-control" id="rib" name="rib">
+                                <label for="rib" class="form-label">Clé Rib</label>
+                                <input type="text" class="form-control" id="rib" name="rib" minlength="2" maxlength="2">
                             </div>
                         </div>
                         
@@ -156,7 +164,7 @@
                 <div class="card-body">
                     <label for="" class="form-label">Je souhaite payer mes primes chaque :</label>
                     <div class="mb-3">
-                        <div class="form-check form-check-inline">
+                        {{-- <div class="form-check form-check-inline">
                             <input class="form-check-input" name="periodicite" type="radio" value="M"
                                 id="Mois">
                             <label class="form-check-label" for="Mois">
@@ -176,7 +184,7 @@
                             <label class="form-check-label" for="Semestre">
                                 Semestre
                             </label>
-                        </div>
+                        </div> --}}
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="periodicite" type="radio" value="A"
                                 id="Annee" checked>
@@ -184,13 +192,13 @@
                                 Année
                             </label>
                         </div>
-                        <div class="form-check form-check-inline">
+                        {{-- <div class="form-check form-check-inline">
                             <input class="form-check-input" name="periodicite" type="radio" value="U"
                                 id="Versement_unique">
                             <label class="form-check-label" for="Versement_unique">
                                 Versement unique
                             </label>
-                        </div>
+                        </div> --}}
                     </div>
                     @if ($product->CodeProduit == 'SUPMIXTE')
                         <div class="row">
@@ -227,20 +235,20 @@
                             </div>
                             <div class="col-12 mb-3">
                                 <label for="primepricipale" class="form-label">Je souhaite payer une prime de :</label>
-                                <input type="number" class="form-control" id="primepricipale" name="primepricipale" value="" required>
+                                <input type="number" class="form-control" id="primepricipale" name="primepricipale" value="5000" required readonly>
                             </div>
 
                             <div class="col-12 mb-3">
                                 <label for="capital" class="form-label">Capital souscrit :</label>
-                                <input type="number" class="form-control" id="capital" name="capital" value="" required>
+                                <input type="number" class="form-control" id="capital" name="capital" value="1000000" required readonly>
                             </div>
 
                             <div class="col-12 mb-3">
                                 <label for="duree" class="form-label">Durée de cotisation :</label>
-                                <input type="number" class="form-control bg-gray" id="duree" name="duree">
+                                <input type="number" class="form-control bg-gray" id="duree" name="duree" value="1" readonly>
                             </div>
                             <div class="col-12 mb-3 muted" disabled>
-                                <label for="fraisadhesion" class="form-label muted">Fraie d'adhesion :</label>
+                                <label for="fraisadhesion" class="form-label muted">Frais d'adhesion :</label>
                                 <input type="number" class="form-control" id="fraisadhesion" name="fraisadhesion" value="0" readonly disabled>
                             </div>
 

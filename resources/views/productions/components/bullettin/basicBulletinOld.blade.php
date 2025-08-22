@@ -290,6 +290,87 @@
             </div>
         </section>
 
+        <section>
+            <fieldset class="" style="border: 1px solid #ccc; padding: 1rem; margin-top: 30px">
+                <legend class="float-none w-auto px-2" style="float: none; width: auto; font-size: 0.875rem; border: 1px solid #ccc; padding: 5px">
+                    <small style="">INFORMATIONS SUR LES BENEFICIAIRES</small>
+                </legend>
+                <div class="table-wrap">
+                    <style>
+                        /* ====== CSS dans la balise (CSS2/2.1 friendly) ====== */
+                        .table-wrap {
+                        margin: 16px 0;
+                        padding: 12px;
+                        border: 1px solid #ccc;
+                        background: #fafafa;
+                        }
+                        .table-title {
+                        margin: 0 0 10px 0;
+                        font: bold 16px/1.3 Arial, Helvetica, sans-serif; /* police CSS2 */
+                        color: #333;
+                        }
+                        .table-basic {
+                        width: 100%;
+                        border-collapse: collapse; /* CSS2 */
+                        table-layout: fixed;       /* améliore la répartition des colonnes */
+                        }
+                        .table-basic th,
+                        .table-basic td {
+                        border: 1px solid #ddd;
+                        padding: 8px;
+                        vertical-align: top;       /* CSS2 */
+                        word-wrap: break-word;     /* CSS2.1 */
+                        font: normal 13px/1.4 Arial, Helvetica, sans-serif;
+                        color: #222;
+                        background: #fff;
+                        }
+                        .table-basic th {
+                        background: #f0f0f0;
+                        text-align: left;          /* CSS2 */
+                        }
+                        /* Alternance manuelle via classes (pas de :nth-child) */
+                        .row-alt td { background: #f9f9f9; }
+                    </style>
+
+                    <table class="table-basic" cellpadding="0" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Colonne 1</th>
+                            <th>Colonne 2</th>
+                            <th>Colonne 3</th>
+                            <th>Colonne 4</th>
+                            <th>Colonne 5</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Valeur 1.1</td>
+                            <td>Valeur 1.2</td>
+                            <td>Valeur 1.3</td>
+                            <td>Valeur 1.4</td>
+                            <td>Valeur 1.5</td>
+                        </tr>
+                        <tr class="row-alt">
+                            <td>Valeur 2.1</td>
+                            <td>Valeur 2.2</td>
+                            <td>Valeur 2.3</td>
+                            <td>Valeur 2.4</td>
+                            <td>Valeur 2.5</td>
+                        </tr>
+                        <tr>
+                            <td>Valeur 3.1</td>
+                            <td>Valeur 3.2</td>
+                            <td>Valeur 3.3</td>
+                            <td>Valeur 3.4</td>
+                            <td>Valeur 3.5</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+
+        </section>
+
         <section style="margin-top: 100px">
             <div class="container" style=" width: 100%">
 

@@ -73,13 +73,13 @@
                         <div class="col-6  col-xs-12 border-r">
                             <dl class="row">
                                 <dt class="col-xs-12 col-sm-6 col-md-6 col-lg-6">Produit:</dt>
-                                <dd class="col-xs-12 col-sm-6 col-md-6 col-lg-6">{{ $product->MonLibelle ?? "null"}}</dd>
+                                <dd class="col-xs-12 col-sm-6 col-md-6 col-lg-6">SECURICOMPTE GT BANK</dd>
 
                                 <dt class="col-xs-12 col-sm-6 col-md-6 col-lg-6">Date Effet:</dt>
                                 <dd class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="displayDateEffet">-</dd>
 
                                 <dt class="col-xs-12 col-sm-6 col-md-6 col-lg-6">Prime principale:</dt>
-                                <dd class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="displayPrimePrincipale">2500</dd>
+                                <dd class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="displayPrimePrincipale">5000</dd>
 
                                 <dt class="col-xs-12 col-sm-6 col-md-6 col-lg-6">Frais d'adhésion:</dt>
                                 <dd class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="displayFraisAdhesion">--</dd>
@@ -88,19 +88,19 @@
                                 <dd class="col-xs-12 col-sm-6 col-md-6 col-lg-6">Lorem, ipsum dolor.</dd> --}}
                                 
                                 <dt class="col-xs-12 col-sm-6 col-md-6 col-lg-6">Capital désiré:</dt>
-                                <dd class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="displayCapital"></dd>
+                                <dd class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="displayCapital">1 000 000</dd>
                             </dl>
                         </div>
                         <div class="col-6  col-xs-12">
                             <dl class="row">
                                 <dt class="col-xs-12 col-sm-6 col-md-6 col-lg-6">Mode paiement:</dt>
-                                <dd class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="displayModePaiement">-</dd>
+                                <dd class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="displayModePaiement">Prelevement Bancaire </dd>
 
                                 <dt class="col-xs-12 col-sm-6 col-md-6 col-lg-6">Duree:</dt>
-                                <dd class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="displayDureePay">-</dd>
+                                <dd class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="displayDureePay">1</dd>
 
                                 <dt class="col-xs-12 col-sm-6 col-md-6 col-lg-6">Organisme payeur:</dt>
-                                <dd class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="displayOrganisme">CORIS</dd>
+                                <dd class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="displayOrganisme">GTBANK</dd>
 
                                 <dt class="col-xs-12 col-sm-6 col-md-6 col-lg-6">Agence:</dt>
                                 <dd class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="displayAgence">-</dd>
